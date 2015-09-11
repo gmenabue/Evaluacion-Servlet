@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>EvaluacionServlet</display-name>
+  <welcome-file-list>
+    <welcome-file>recuperardepartamentos.html</welcome-file>
+    <welcome-file>recuperardepartamentos.htm</welcome-file>
+    <welcome-file>recuperardepartamentos.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <!-- Comienzo de los servlets -->
+  
+  <!-- Servlet Para Recuperar Departamentos -->
+  <servlet>
+    <description>recuperarDepartamentosServlet</description>
+    <display-name>recuperarDepartamentosServlet</display-name>
+    <servlet-name>recuperarDepartamentosServlet</servlet-name>
+    <servlet-class>recuperar.departamentos.servlet.recuperarDepartamentosServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>recuperarDepartamentosServlet</servlet-name>
+    <url-pattern>/recuperarDepartamentosServlet</url-pattern>
+  </servlet-mapping>
+  
+  
+  <!-- Servlet Para Recuperar Empleados Por Departamento -->
+  <servlet>
+    <description>RecuperarEmpleadosServlet</description>
+    <display-name>RecuperarEmpleadosServlet</display-name>
+    <servlet-name>RecuperarEmpleadosServlet</servlet-name>
+    <servlet-class>recuperar.empleados.servlet.RecuperarEmpleadosServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RecuperarEmpleadosServlet</servlet-name>
+    <url-pattern>/RecuperarEmpleadosServlet</url-pattern>
+  </servlet-mapping>
+  
+  
+  <!-- Fin de los servlets -->
+  
+  
+  <!-- Configura La Sesion -->
+  <session-config>
+    <session-timeout>20</session-timeout>
+  </session-config>
+  
+  <!-- Cuando Hay Un Error Me Redirige A ExeptionServlet -->
+  <error-page>
+    <exception-type> javax.servlet.ServletException </exception-type>
+    <location>/ExceptionServlet</location>
+  </error-page>
+</web-app>
